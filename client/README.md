@@ -1,8 +1,21 @@
-# React + Vite
+# MERN todo app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Basic todo app built with the MERN stack
 
-Currently, two official plugins are available:
+Built to practice setting up a basic Express server, MongoDB database, basic
+CRUD operations, connect the backend to a basic frontend UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Live demo:
+
+coming soon
+
+### Functionalities / Features:
+
+- Add to do
+- Edit to do
+- Delete to do
+- Mark to do as completed
+
+#### Seed Database
+
+- Code ref for importing data from json file + Database seeder

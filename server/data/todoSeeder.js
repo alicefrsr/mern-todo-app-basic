@@ -30,7 +30,7 @@ const todos = JSON.parse(
 const importData = async () => {
   try {
     await Todo.create(todos);
-    console.log('Todos successfully imported'.green.inverse);
+    console.log('Todos successfully imported to db'.green.inverse);
     process.exit();
   } catch (error) {
     console.log(`${error}`.red.inverse);
@@ -42,7 +42,7 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Todo.deleteMany();
-    console.log('Todos successfully deleted'.red.inverse);
+    console.log('Todos successfully deleted from db'.red.inverse);
     process.exit();
   } catch (error) {
     console.log(`${error}`.red.inverse);
