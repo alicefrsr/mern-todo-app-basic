@@ -26,9 +26,9 @@ const editTodo = (todoId, task, setTask, setIsEditing, setTodos) => {
     .then((res) => {
       console.log('res.data ', res.data);
       console.log(`Todo id ${todoId} edited`);
-      setTask(''); // clear field
+      setTask('');
       setIsEditing(false);
-      getAllTodos(setTodos); // display all todos
+      getAllTodos(setTodos);
     })
     .catch((error) => console.log(error));
 };
@@ -43,8 +43,8 @@ const toggleComplete = (todoId, isCompleted, setIsCompleted, setTodos) => {
       console.log('res.data ', res.data);
       console.log('isCompleted ', isCompleted);
       console.log(`Todo id ${todoId}: completed ${!isCompleted}`);
-      setIsCompleted(!isCompleted);
-      getAllTodos(setTodos); // display all todos
+      setIsCompleted((isCompleted) => !isCompleted);
+      getAllTodos(setTodos);
     })
     .catch((error) => console.log(error));
 };
@@ -55,7 +55,7 @@ const deleteTodo = (todoId, setTodos) => {
     .then((res) => {
       console.log('res.data ', res.data);
       console.log(`Todo id ${todoId} deleted`);
-      getAllTodos(setTodos); // display all todos
+      getAllTodos(setTodos);
     })
     .catch((error) => console.log(error));
 };
