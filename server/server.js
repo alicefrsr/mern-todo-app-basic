@@ -10,7 +10,21 @@ import todoRoutes from './routes/todoRoutes.js';
 const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 5000;
-app.use(cors());
+
+// CORS:
+// Option 1: Allow all origins with defautl of cors(*)
+// app.use(cors());
+// Option 2: Allow custom origins, better, more control
+const corsOptions = {
+  origin: `http://localhost:${process.env.CLIENT_PORT || 5173}`,
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+};
+// const corsOptions = {
+//   origin: `http://localhost:${process.env.CLIENT_PORT || 3000}`,
+//   optionSuccessStatus: 200,
+// };
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // DATABASE CONNECTION
@@ -41,7 +55,6 @@ app.post('/api/test', (req, res) => {
   res.status(200).json({ message: 'POST Test page' });
 });
 
-// app.use('/api/auth', authRoutes);
 app.use('/api/todos', todoRoutes);
 
 app.listen(PORT, () =>

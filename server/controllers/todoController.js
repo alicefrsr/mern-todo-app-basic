@@ -12,7 +12,9 @@ const getAllTodos = async (req, res) => {
       data: {
         todos: todos,
       },
+      // data: todos,
     });
+    // OR // return res.status(201).json(todos);
   } catch (error) {
     res.status(404).json({
       status: 'fail',
@@ -26,21 +28,29 @@ const getAllTodos = async (req, res) => {
 // @access Public
 const createTodo = async (req, res) => {
   try {
-    // const newTodo = new Todo({
-    //   task: req.body.task,
-    //   completed: req.body.completed,
-    // });
+    const { task } = req.body;
+    if (!task) {
+      return res.status(400).json({
+        status: 'fail',
+        message: 'Field required',
+      });
+    }
+    const newTodo = new Todo({
+      task: req.body.task,
+      completed: req.body.completed,
+    });
     // const todo = await newTodo.save(); // calling  method on the new DOCUMENT
     // res.status(201).json(todo);
 
     // calling  method on the MODEL
-    const newTodo = await Todo.create(req.body);
+    const todo = await Todo.create(newTodo);
     res.status(201).json({
       status: 'success',
       data: {
         todo: newTodo,
       },
     });
+    // OR // return res.status(201).send(book);
   } catch (error) {
     res.status(400).json({
       status: 'fail',
@@ -69,6 +79,7 @@ const getTodo = async (req, res) => {
         todo: todo,
       },
     });
+    // res.status(200).json(book);
   } catch (error) {
     res.status(404).json({
       status: 'fail',

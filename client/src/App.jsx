@@ -46,12 +46,13 @@ function App() {
   return (
     <main className='app'>
       <h1>MERN todo list</h1>
-      <div className='input'>
+      <div className='form-input'>
         <input
           type='text'
           placeholder='Add a todo...'
           value={task}
           onChange={(e) => setTask(e.target.value)}
+          autoFocus
         />
         <button
           onClick={

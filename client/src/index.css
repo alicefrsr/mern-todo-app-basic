@@ -66,7 +66,7 @@ button {
  transform: ;
 } */
 
-.input {
+.form-input {
   display: flex;
   gap: 2rem;
 }
