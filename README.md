@@ -1,14 +1,22 @@
-# MERN To-do app
+# MERN todo app
 
-> A simple to-do app with server and database.
+> Basic todo app built with the MERN stack
 
-Built to practice: Express and MongoDB basic setup.
+Built to practice setting up a basic Express server, MongoDB database, basic
+CRUD operations, connect the backend to a basic frontend UI.
 
-### Live Demo:
+### Live demo:
 
-https://
+coming soon
 
-### Functionalities:
+### Functionalities / Features:
 
-- to-dos: add, mark as completed, edit, delete
-- saved to MongoDB database
+- Add to do
+- Edit to do
+- Delete to do
+- Mark to do as completed
+- Saved onto MongoDB database
+
+#### Seed Database
+
+- Code ref for importing data from json file + Database seeder
